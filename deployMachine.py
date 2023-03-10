@@ -1,24 +1,29 @@
 # Database
+# Global Variables
+result = list
 ninja = list
 comboSkill = list
 # Combo Skills (Name, Atk, Def, Agi, HP, Ninja Count, Trigger,  Boost Type)
-comboSkill[0] = ('Konoha12Ninja', 10, 10, 10, 10, 12, False, 'All'     )
-comboSkill[1] = ('FiveKage',      12, 12, 12, 12, 5,  False, 'All'     )
-comboSkill[2] = ('Team7',         0,  0,  0,  0,  3,  True,  'Trigger' )
+comboSkill[0] = ['Konoha12Ninja', 10, 10, 10, 10, 12, False, 'All'     ]
+comboSkill[1] = ['FiveKage',      12, 12, 12, 12, 5,  False, 'All'     ]
+comboSkill[2] = ['Team7',         0,  0,  0,  0,  3,  True,  'Trigger' ]
 
 # Ninja name and Combo Skill registered to each one
-ninja[1] = ('Sasuke', comboSkill[0], comboSkill[2])
-ninja[2] = ('Sakura', comboSkill[0], comboSkill[2])
-ninja[0] = ('Naruto', comboSkill[0], comboSkill[2])
-ninja[3] = ('Gaara',  comboSkill[1])
-
-# Global Variables
-result = []
+ninja[0] = ['Naruto', comboSkill[0], comboSkill[2]]
+ninja[1] = ['Sasuke', comboSkill[0], comboSkill[2]]
+ninja[2] = ['Sakura', comboSkill[0], comboSkill[2]]
+ninja[3] = ['Gaara',  comboSkill[1]]
+ninja[4] = ['Hinata', comboSkill[2]]
 
 def myNinja(inputNinja):
     # Append user input to myNinja[]
     myNinja.append(inputNinja)
     pass
+
+def getComboSkill(mainNinja) :
+    search
+    for i in mainNinja : 
+
 
 # Checks whether the combo skill is already in result[]
 def doEntryCheck(currentComboSkill) :
@@ -28,7 +33,6 @@ def doEntryCheck(currentComboSkill) :
     
     else :
         return True
-
 # Finds which combo skills yield the most stat gain
 def findBestComboSkills() :
     if doEntryCheck() :
@@ -54,10 +58,8 @@ def optimize(myNinja, statPrio, mainNinja) :
         doEntryCheck()
         findBestComboSkills()
         priorityCheck()
-        
+        # BONUS: check if there's other combo skills with prioritised stat, if len(result) < 15
         result.append(potentialNinja[ninjaIndex[name]])
-        
-        ninjaCount == len(result)
     
     return result
 
