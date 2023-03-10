@@ -1,8 +1,10 @@
 # Database
 # Global Variables
-result = list
-ninja = list
-comboSkill = list
+ninja       = list
+comboSkill  = list
+result      = list
+mainNinja   = list
+myNinja     = list
 # Combo Skills (Name, Atk, Def, Agi, HP, Ninja Count, Trigger,  Boost Type)
 comboSkill[0] = ['Konoha12Ninja', 10, 10, 10, 10, 12, False, 'All'     ]
 comboSkill[1] = ['FiveKage',      12, 12, 12, 12, 5,  False, 'All'     ]
@@ -15,15 +17,32 @@ ninja[2] = ['Sakura', comboSkill[0], comboSkill[2]]
 ninja[3] = ['Gaara',  comboSkill[1]]
 ninja[4] = ['Hinata', comboSkill[2]]
 
-def myNinja(inputNinja):
-    # Append user input to myNinja[]
-    myNinja.append(inputNinja)
-    pass
+def addNinja(inputNinja):
+    for i in len(ninja) :
+        if inputNinja == ninja[i[0]] :
+            myNinja.append(inputNinja)
+            print(ninja[i[0]]+' added successfully')
+            i += 1
+        else :
+            print('Ninja not found')
+            break
+
+def addMainNinja(inputMainNinja):
+    for i in len(ninja) :
+        if inputMainNinja == ninja[i[0]] :
+            mainNinja.append(inputMainNinja)
+            i += 1
+        else :
+            break
 
 def getComboSkill(mainNinja) :
-    search
-    for i in mainNinja : 
-
+    searchString = []
+    for i in mainNinja :
+        for j in range(mainNinja[i[1]], mainNinja[i[max]]) :
+            if mainNinja[i[j]] == comboSkill[j]:
+                searchString.append()
+                j += 1
+        i += 1
 
 # Checks whether the combo skill is already in result[]
 def doEntryCheck(currentComboSkill) :
