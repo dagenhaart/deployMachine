@@ -1,35 +1,42 @@
 # Database
-
+ninja = list
+comboSkill = list
 # Combo Skills (Name, Atk, Def, Agi, HP, Ninja Count, Trigger,  Boost Type)
-ComboSkill[0]   = ('Konoha12Ninja', 10, 10, 10, 10, 12, False, 'All'     )
-ComboSkill[1]   = ('FiveKage',      12, 12, 12, 12, 5,  False, 'All'     )
-ComboSkill[2]   = ('Team7',         0,  0,  0,  0,  3,  True,  'Trigger' )
-
+comboSkill[0] = ('Konoha12Ninja', 10, 10, 10, 10, 12, False, 'All'     )
+comboSkill[1] = ('FiveKage',      12, 12, 12, 12, 5,  False, 'All'     )
+comboSkill[2] = ('Team7',         0,  0,  0,  0,  3,  True,  'Trigger' )
 
 # Ninja name and Combo Skill registered to each one
-ninja[0] = ('Naruto', (Konoha12Ninja), (Team7))
-ninja[1] = ('Sasuke', (Konoha12Ninja), (Team7))
-ninja[2] = ('Sakura', (Konoha12Ninja), (Team7))
+ninja[1] = ('Sasuke', comboSkill[0], comboSkill[2])
+ninja[2] = ('Sakura', comboSkill[0], comboSkill[2])
+ninja[0] = ('Naruto', comboSkill[0], comboSkill[2])
+ninja[3] = ('Gaara',  comboSkill[1])
+
+# Global Variables
+result = []
 
 def myNinja(inputNinja):
     # Append user input to myNinja[]
-    myNinja = []
     myNinja.append(inputNinja)
-    return ?
+    pass
 
 # Checks whether the combo skill is already in result[]
 def doEntryCheck(currentComboSkill) :
-    # cycle through result[] to find the corresponding comboSkill
-    if comboSkill == result[] :
+    # Cycle through result[] to find the corresponding comboSkill
+    if currentComboSkill == result[] :
         return False
     
-    elif comboSkill != result[] :
+    else :
         return True
 
 # Finds which combo skills yield the most stat gain
 def findBestComboSkills() :
+    if doEntryCheck() :
+        return
     # Sum all the stat gain attribute of combo skill object
     # Return the combo skills name
+    else : 
+        return
 
 # Checks if the current combo skill has the priority stat the user chose
 def priorityCheck(priorityStat) :
@@ -41,19 +48,21 @@ def priorityCheck(priorityStat) :
         return True
 
 # Optimizing Function
-def optimize(myNinja[], statPrio, mainNinja[]) :
-    ninjaCount = 0
-    result = []
+def optimize(myNinja, statPrio, mainNinja) :
 
-    while ninjaCount < 15 :
+    while len(result) <= 15 :
         doEntryCheck()
         findBestComboSkills()
         priorityCheck()
-
-    result.append(potentialNinja[ninjaIndex[name]])
+        
+        result.append(potentialNinja[ninjaIndex[name]])
+        
+        ninjaCount == len(result)
     
     return result
 
-#Printing Result
+# Printing Result
 def finalResult():
     print(result[])
+
+
